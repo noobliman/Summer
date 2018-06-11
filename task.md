@@ -52,23 +52,35 @@
 
 7.
    cat /etc/services | grep udp > udp_services.txt<br />
+   
+   
+8.
    'top' then 'shift+f' then 's' to set the sort then 'esc' to go back <br />
+   
+9.
    'echo 'alias stats="/bin/uptime"' >> ~/.bashrc'<br />
    and 'source ~/.bashrc'<br />
+   
+   
+10.
    'vim test.txt' and press 'i' for insert mode and edit the file<br />
    press 'esc' for command mode and --><br />
    ':wq' for save and exit and ':q' for exit only<br />
 
 
 
-
-8.
+11.
    sudo apt install firewalld<br />
    sudo systemctl enable firewalld<br />
    sudo systemctl restart firewalld<br />
    sudo firewall-cmd --get-default-zone<br />
    sudo firewall-cmd --set-default-zone=dmz<br />
    sudo firewall-cmd --get-zones > zones.txt<br />
-   sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp'
+ 
+ 
+12.
+   sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp'<br />
    sudo firewall-cmd --list-ports >> zones.txt<br />
+   
+13.
    sudo firewall-cmd --zone=public --permanent --add-forward-port=port=80:proto=tcp:toport=8080'<br />
