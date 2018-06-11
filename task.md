@@ -28,9 +28,9 @@
 
 3.
    nano /etc/passwd<br />
-   and edit 'max:x:1003:1005::/home/max:/bin/bash'
+   Edit 'max:x:1003:1005::/home/max:/bin/bash'
    to 'max:x:1003:1005::/home/max:/bin/false'<br />
-   'ctrl-x' and 'Enter' to save it.<br />
+   Press 'ctrl-x' and 'Enter' to save it.<br />
    sudo chage -d 0 bob<br />
    sudo chage -E \`date -d "30 days" +"%Y-%m-%d"\` max<br />
 
@@ -47,7 +47,7 @@
 
 6.
    mkdir /tmp/var<br />
-   and 'tar -cvjf /tmp/var/archive.tar.bz2 /etc/hosts'<br />
+   'tar -cvjf /tmp/var/archive.tar.bz2 /etc/hosts'<br />
 
 
 7.
