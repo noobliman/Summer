@@ -1,10 +1,10 @@
 # Task
 
 1.
-   mkdir Music<br/>
+   mkdir music<br/>
    touch song{1..10}.mp3<br/>
-   mv song*.mp3 Music<br/>
-   ln -s Music Audio<br/>
+   mv song*.mp3 music<br/>
+   ln -s music audio<br/>
 
 
 2.
