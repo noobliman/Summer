@@ -63,7 +63,7 @@
    
    
 10.
-    'vim test.txt' and press 'i' for insert mode and edit the file<br />
+    'vim test.txt' and press 'i' to enter insert mode and edit the file<br />
     press 'esc' for command mode and --><br />
     ':wq' for save and exit and ':q' for exit only<br />
 
