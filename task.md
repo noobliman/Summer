@@ -1,4 +1,4 @@
-# glug task
+# Task
 
 1.
    mkdir Music<br/>
@@ -8,36 +8,37 @@
 
 
 2.
-  sudo groupadd sysadmin<br />
-  sudo groupadd manager<br />
-  sudo useradd  bob<br />
-  sudo useradd  rob<br />
-  sudo useradd  max<br />
-  sudo passwd bob<br />  type linux123 in password prompt<br />
-  sudo passwd rob<br />
-  type linux123 in password prompt<br />
-  sudo passwd max<br />
-  type linux123 in password prompt<br />
-  sudo usermod -g sysadmin bob<br />
-  sudo usermod -g sysadmin rob<br />
-  sudo usermod -g sysadmin max<br />
-  sudo usermod -G manager bob<br />
-  sudo usermod -G manager rob<br />
+   sudo groupadd sysadmin<br />
+   sudo groupadd manager<br />
+   sudo useradd  bob<br />
+   sudo useradd  rob<br />
+   sudo useradd  max<br />
+   sudo passwd bob<br />
+   type linux123 in password prompt<br />
+   sudo passwd rob<br />
+   type linux123 in password prompt<br />
+   sudo passwd max<br />
+   type linux123 in password prompt<br />
+   sudo usermod -g sysadmin bob<br />
+   sudo usermod -g sysadmin rob<br />
+   sudo usermod -g sysadmin max<br />
+   sudo usermod -G manager bob<br />
+   sudo usermod -G manager rob<br />
 
 
 3.
    nano /etc/passwd<br />
-    and edit 'max:x:1003:1005::/home/max:/bin/bash'
-    to 'max:x:1003:1005::/home/max:/bin/false'<br />
-    'ctrl-x' and 'Enter' to save it.<br />
-    sudo chage -d 0 bob<br />
-    sudo chage -E \`date -d "30 days" +"%Y-%m-%d"\` max<br />
+   and edit 'max:x:1003:1005::/home/max:/bin/bash'
+   to 'max:x:1003:1005::/home/max:/bin/false'<br />
+   'ctrl-x' and 'Enter' to save it.<br />
+   sudo chage -d 0 bob<br />
+   sudo chage -E \`date -d "30 days" +"%Y-%m-%d"\` max<br />
 
 
 4.
    mkdir /home/manager<br />
-  sudo chgrp manager /home/manager<br />
-  sudo chmod 2770 /home/manager<br />
+   sudo chgrp manager /home/manager<br />
+   sudo chmod 2770 /home/manager<br />
 
 
 5.
@@ -53,21 +54,21 @@
    cat /etc/services | grep udp > udp_services.txt<br />
    'top' then 'shift+f' then 's' to set the sort then 'esc' to go back <br />
    'echo 'alias stats="/bin/uptime"' >> ~/.bashrc'<br />
-    and 'source ~/.bashrc'<br />
+   and 'source ~/.bashrc'<br />
    'vim test.txt' and press 'i' for insert mode and edit the file<br />
    press 'esc' for command mode and --><br />
-  ':wq' for save and exit and ':q' for exit only<br />
+   ':wq' for save and exit and ':q' for exit only<br />
 
 
 
 
 8.
-  sudo apt install firewalld<br />
-  sudo systemctl enable firewalld<br />
-  sudo systemctl restart firewalld<br />
-  sudo firewall-cmd --get-default-zone<br />
-  sudo firewall-cmd --set-default-zone=dmz<br />
-  sudo firewall-cmd --get-zones > zones.txt<br />
-  sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp'
-  sudo firewall-cmd --list-ports >> zones.txt<br />
-  sudo firewall-cmd --zone=public --permanent --add-forward-port=port=80:proto=tcp:toport=8080'<br />
+   sudo apt install firewalld<br />
+   sudo systemctl enable firewalld<br />
+   sudo systemctl restart firewalld<br />
+   sudo firewall-cmd --get-default-zone<br />
+   sudo firewall-cmd --set-default-zone=dmz<br />
+   sudo firewall-cmd --get-zones > zones.txt<br />
+   sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp'
+   sudo firewall-cmd --list-ports >> zones.txt<br />
+   sudo firewall-cmd --zone=public --permanent --add-forward-port=port=80:proto=tcp:toport=8080'<br />
