@@ -33,7 +33,7 @@ For windows just go to this [download link](https://www.python.org/downloads/) a
 #### Building from source
 >Note : This installed the unstable 4.0.0 version which wasn't able to work with my integrated webcam.
 * Open terminal
-* Step 1 : Update Ubuntu
+* Step 1 : Update Ubuntu<br />
 `
 sudo apt-get update
 `
@@ -41,7 +41,7 @@ sudo apt-get update
 sudo apt-get upgrade
 `
 
-* Step 2 : Installing dependencies
+* Step 2 : Installing dependencies<br />
 `
 sudo apt-get install build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
 `
@@ -54,7 +54,7 @@ sudo apt-get install python3-dev python3-numpy libtbb2 libtbb-dev
 sudo apt-get install libjpeg-dev libpng-dev libtiff5-dev libjasper-dev libdc1394-22-dev libeigen3-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev sphinx-common libtbb-dev yasm libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libopenexr-dev libgstreamer-plugins-base1.0-dev libavutil-dev libavfilter-dev libavresample-dev
 `
 
-* Step 3 : Clone OpenCV
+* Step 3 : Clone OpenCV<br />
 `
 sudo -s
 `
@@ -71,7 +71,7 @@ git clone https://github.com/opencv/opencv.git
 git clone https://github.com/opencv/opencv_contrib.git
 `
 
-* Step 4 : Build and Install.
+* Step 4 : Build and Install.<br />
 `
 cd opencv
 `
