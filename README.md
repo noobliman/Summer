@@ -134,7 +134,7 @@ Now simply enter the address of the file along with file extension to run.
 >Example(for python 3) : /home/liman/Downloads/sample_vid.mp4
 
 >Example(for python 2) : '/home/liman/Downloads/sample_vid.mp4'
-Remember to enter the address inside '' for python 2.
+<br />Remember to enter the address inside '' for python 2.
 
 
 
@@ -145,7 +145,7 @@ Now simply enter the address of the file along with file extension to run.
 >Example(for python 3) : /home/liman/Downloads/sample.png
 
 >Example(for python 2) : '/home/liman/Downloads/sample.png'
-Remember to enter the address inside '' for python 2.
+<br />Remember to enter the address inside '' for python 2.
 
 
 ### The Face Detecter should be up and running without any issues.
