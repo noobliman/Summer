@@ -2,9 +2,9 @@ import numpy as np
 import cv2
 import os
 
-face_cascade = cv2.CascadeClassifier('/opt/opencv/data/haarcascades/haarcascade_frontalface_default.xml')
-pat=input("Enter path of video to be tested with file extention\n")
-x=os.path.join(pat)
+face_cascade = cv2.CascadeClassifier('/usr/share/opencv/haarcascades/haarcascade_frontalface_default.xml')
+pat=input("Enter path (wrap \"\" for python2) of picture to be tested with file extention\n")
+x=os.path.normpath(pat)
 video_capture = cv2.VideoCapture(x)
 while True:
     ret, img = video_capture.read()
