@@ -1,6 +1,26 @@
 # Summer Project
 ## Using ML and OpenCV for face recognition
-### Last update : Alpha stage is ready
+### Last update : Standalone python script is ready
+
+---
+
+### Short method
+
+#### Clong the directory
+
+First and foremost you must clone the repository to your local storage.
+You can either do it from the website or use git.
+For using git run : `git clone https://github.com/noobliman/Summer` in the directory you want to clone.
+
+#### Running face detecter
+
+* Open terminal.
+* Open project directory.
+* Run either `python3 standalone.py` or `python standalone.py` as per your wish.
+
+---
+
+### Long method
 
 Firstly we must ensure that these two are installed :
 
@@ -149,3 +169,4 @@ Now simply enter the address of the file along with file extension to run.
 
 
 ### The Face Detecter should be up and running without any issues.
+---
