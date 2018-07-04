@@ -1,6 +1,6 @@
 # Summer Project
 ## Using ML and OpenCV for face recognition
-### Last update : Standalone python script is ready
+### Last update : Bug fixes performed for standalone script
 
 ---
 
