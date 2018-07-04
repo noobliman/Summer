@@ -3,7 +3,6 @@ import time
 import sys
 import urllib
 import numpy as np
-import sys
 try:
 	import pip
 except ImportError:
@@ -26,6 +25,7 @@ except ImportError:
 opn=int(input("\nChoose an option :\n1. Enter image detection mode.\n2. Enter video detection mode.\n\n"))
 face_cascade = cv2.CascadeClassifier('/usr/share/opencv/haarcascades/haarcascade_frontalface_default.xml')
 st=str(sys.version)
+flg=0
 if(opn==1):
 	pat=int(input("\nChoose one:\n1.Enter address/url of picture with extention.\n2.Enter 0 to use webcam.\n\n"))
 	if pat!=0:
@@ -70,13 +70,18 @@ if(opn==1):
 	    	break
 	cv2.destroyAllWindows()
 else:
-	if st[0]=='3':
-		pat=int(input("\nChoose one:\n1.Enter address of video with extention.\n2.Enter 0 to use webcam.\n\n"))
-	else:
-		pat=int(input("\nChoose one:\n1.Enter address/url of video with extention.\n2.Enter 0 to use webcam.\n\n"))
+	pat=int(input("\nChoose one:\n1.Enter address/url of video with extention.\n2.Enter 0 to use webcam.\n\n"))
 	if pat!=0:
 		if(st[0]=='3'):
-			pat=input("\nEnter the address of video with extention:\n\n")
+			pat=int(input("\nChoose one:\n1.Enter the local address of video with extention.\n2.Enter the url of video.\n\n"))
+			if(pat==1):
+				pat=input("\nEnter the address of video with extention:\n\n")
+			else:
+				pat=input("\nEnter the url of video with extention:\n\n")
+				sss="wget -O ttmp.mp4 "+pat
+				os.system(sss)
+				pat="ttmp.mp4"
+				flg=1
 		else:
 			pat=input("\nEnter the address/url of video with extention within quotes:\n\n")
 		x=os.path.normpath(pat)
@@ -117,3 +122,5 @@ else:
 			break
 	video_capture.release()
 	cv2.destroyAllWindows()
+	if(flg==1):
+		os.system("rm ttmp.mp4")
