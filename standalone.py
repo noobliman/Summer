@@ -1,6 +1,9 @@
 import os
 import time
 import sys
+import urllib
+import numpy as np
+import sys
 try:
 	import pip
 except ImportError:
@@ -20,25 +23,42 @@ except ImportError:
 	os.system("sudo apt-get install python-numpy")
 	os.system("sudo apt-get install python3-numpy")
 	import numpy as np
-opn=input("\nChoose an option :\n1. Enter image detection mode.\n2. Enter video detection mode.\n\n")
-face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
-if(opn=='1'):
-	pat=input("\nChoose one:\n1.Enter address/url of picture with extention.\n2.Enter 0 to use webcam.\n\n")
-	if pat!='0':
-		x=os.path.normpath(pat)
+opn=int(input("\nChoose an option :\n1. Enter image detection mode.\n2. Enter video detection mode.\n\n"))
+face_cascade = cv2.CascadeClassifier('/usr/share/opencv/haarcascades/haarcascade_frontalface_default.xml')
+st=str(sys.version)
+if(opn==1):
+	pat=int(input("\nChoose one:\n1.Enter address/url of picture with extention.\n2.Enter 0 to use webcam.\n\n"))
+	if pat!=0:
+		pat=int(input("\nChoose one:\n1.Enter the local address of picture with extention.\n2.Enter the url of image.\n\n"))
+		if(pat==2):
+			if(st[0]=='2'):
+				uuu=input("\nEnter the url within quotes:\n\n")
+				req = urllib.urlopen(uuu)
+			else:
+				uuu=input("\nEnter the url:\n\n")
+				req = urllib.request.urlopen(uuu)
+			arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
+		else:
+			if(st[0]=='2'):
+				uuu=input("\nEnter the local address within quotes:\n\n")
+			else:
+				uuu=input("\nEnter the local address:\n\n")			
+			x=os.path.normpath(uuu)
 	else:
 		x=0;
 		print("\nSmile,your picture is being taken.\n")
 		time.sleep(1)
 		print(":)\n")
 		time.sleep(1)
-	imageSource = x
-	if x!=0:
-		img = cv2.imread(imageSource)
-	else:
+	if pat==0:
 		video_capture = cv2.VideoCapture(x)
 		ret, img = video_capture.read()
 		video_capture.release()
+	else:
+		if pat==2:
+			img = cv2.imdecode(arr, -1)
+		else:
+			img = cv2.imread(x)
 	gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 	faces = face_cascade.detectMultiScale(gray, 1.3, 5)
 	for (x, y, w, h) in faces:
@@ -50,8 +70,15 @@ if(opn=='1'):
 	    	break
 	cv2.destroyAllWindows()
 else:
-	pat=input("\nChoose one:\n1.Enter address/url of video with extention.\n2.Enter 0 to use webcam.\n\n")
-	if pat!='0':
+	if st[0]=='3':
+		pat=int(input("\nChoose one:\n1.Enter address of video with extention.\n2.Enter 0 to use webcam.\n\n"))
+	else:
+		pat=int(input("\nChoose one:\n1.Enter address/url of video with extention.\n2.Enter 0 to use webcam.\n\n"))
+	if pat!=0:
+		if(st[0]=='3'):
+			pat=input("\nEnter the address of video with extention:\n\n")
+		else:
+			pat=input("\nEnter the address/url of video with extention within quotes:\n\n")
 		x=os.path.normpath(pat)
 	else:
 		x=0
