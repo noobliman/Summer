@@ -18,7 +18,8 @@ For using git run : `git clone https://github.com/noobliman/Summer` in the direc
 * Open project directory.
 * Run either `python3 standalone.py` or `python standalone.py` as per your wish.
 
->Note: If you want to use a url in video mode then please use python2 since there are prevailing bugs for url mode in python3
+>Note: If you want to use a url in video mode then please use python2 since there are prevailing bugs for url mode in python3.
+>UPDATE: Url support addedd for python3
 
 ---
 
