@@ -2,7 +2,6 @@ import os
 import time
 import sys
 import urllib
-import numpy as np
 try:
 	import pip
 except ImportError:
